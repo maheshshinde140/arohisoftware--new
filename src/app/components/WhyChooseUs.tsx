@@ -38,9 +38,7 @@ const musicSchoolContent = [
 
 function WhyChooseUs() {
   return (
-    <div className=" relative">
-      <p className="z-10 absolute mt-10 ml-40 font-sans font-semibold "> SERVICE</p>
-      <h1 className="z-10 absolute mt-20 ml-40 font-sans font-semibold "> Transform your business with advanced technologies</h1>
+    <div className=" relative mb-5">
         <StickyScroll content={musicSchoolContent} />
     </div>
   )
