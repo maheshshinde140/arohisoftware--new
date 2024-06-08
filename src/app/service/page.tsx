@@ -36,7 +36,7 @@ function Service() {
             </p>
           </div>
           <div className="lg:w-1/2">
-            <Image src="https://plus.unsplash.com/premium_photo-1681995453325-455f7084888d?q=80&w=2039&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="People high-fiving" className="w-full rounded-lg shadow-lg"  />
+          <img src="https://plus.unsplash.com/premium_photo-1681995453325-455f7084888d?q=80&w=2039&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="People high-fiving" className="w-full rounded-lg shadow-lg" />
           </div>
         </div>
       </div>

@@ -1,28 +1,13 @@
-import type { Config } from "tailwindcss";
-const {
-  default: flattenColorPalette,
-} = require("tailwindcss/lib/util/flattenColorPalette");
- 
+import type { Config } from "tailwindcss"
 
-function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-  );
- 
-  addBase({
-    ":root": newVars,
-  });
-}
-
-const config: Config = {
+const config = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    './src/**/*.{js,jsx,mdx,ts,tsx}',
-  ],
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+	],
   prefix: "",
   theme: {
     container: {
@@ -32,9 +17,7 @@ const config: Config = {
         "2xl": "1400px",
       },
     },
-    
     extend: {
-      
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -68,9 +51,6 @@ const config: Config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        }, 
-        boxShadow: {
-          input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
         },
       },
       borderRadius: {
@@ -79,14 +59,6 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        meteor: {
-          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
-          "70%": { opacity: "1" },
-          "100%": {
-            transform: "rotate(215deg) translateX(-500px)",
-            opacity: "0",
-          },
-        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -95,38 +67,14 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        shimmer: {
-          from: {
-            backgroundPosition: "0 0",
-          },
-          to: {
-            backgroundPosition: "-200% 0",
-          },
-        },
-        scroll: {
-          to: {
-            transform: "translate(calc(-50% - 0.5rem))",
-          },
-        },
-        
       },
-      
       animation: {
-        scroll:
-        "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "meteor-effect": "meteor 5s linear infinite",
-        spotlight: "spotlight 2s ease .75s 1 forwards",
-        shimmer: "shimmer 2s linear infinite",
       },
     },
-   },
-  plugins: [
-    require("tailwindcss-animate"),
-    addVariablesForColors,
-    require('daisyui'),
+  },
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config
 
-  ],
-};
-export default config;
+export default config
