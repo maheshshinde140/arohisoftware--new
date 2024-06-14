@@ -24,7 +24,7 @@ const HomepageCard: React.FC = () => {
     <div className="flex justify-center items-center min-h-screen bg-black text-white mb-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <Card
-          imageUrl="https://source.unsplash.com/random/300x400"
+          imageUrl="https://unsplash.com/photos/a-person-sitting-at-a-desk-with-a-laptop-and-a-computer-monitor-p6YWrjhmjhM"
           altText="Card Image"
           category="CASE STUDY"
           title="Fighting poverty with technology and humanity: Gerando Falcões"
