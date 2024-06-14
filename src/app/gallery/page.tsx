@@ -18,10 +18,12 @@ function page() {
       ];
       
   return (
-    <div className=" flex justify-center relative">
-     <h1 className=" absolute mt-28 pb-11 text-3xl font-bold text-emerald-500 ">Our Gallery</h1>
-      <ParallaxScroll images={images}/>
-    </div>
+    <div className="relative flex flex-col items-center justify-center px-4 sm:px-8 py-16">
+    <h1 className="mt-16 sm:mt-28 pb-8 text-2xl sm:text-3xl lg:text-4xl font-bold text-emerald-500 text-center">
+      Our Gallery
+    </h1>
+    <ParallaxScroll images={images} />
+  </div>
   )
 }
 
